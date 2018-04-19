@@ -1,5 +1,5 @@
 # README
-
+以下為檔案介紹，標題為檔名(or資料夾)。  
 ## week_1  
 熟悉pandas組件。  
 ### pandasFunctionTestCode  
