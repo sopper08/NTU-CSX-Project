@@ -6,32 +6,32 @@
 |Author    |Sopper
 |E-mail    |sopper08@gmail.com
 |Edit Time |2018/3/12
-
-## HOWTODO  
-### STEP 1
+   
+### HOWTODO  
+#### STEP 1  
 到掏寶網先查詢保溫杯.  
 ![](images/searchInsulationCup.png)
-### STEP 2  
+#### STEP 2  
 此次爬蟲使用的方法為: 抓下/上一頁所傳出/入的資料, 通常會包含需要的內容.  
 按F12 -> Network -> 先clear.  
 ![](images/network1.png)
-### STEP 3  
+#### STEP 3  
 按上/下一頁  
 ![](images/network2.png)
-### STEP 4  
+#### STEP 4  
 從Requests資料中找可以拿來爬蟲的資料(篩選前面的區域).   
 ![](images/network3.png)
-### STEP 5  
+#### STEP 5  
 找到好爬蟲的資料後, 點擊右邊的Headers, 紀錄Request URL & Request Method.  
 ![](images/network4.png)
-### STEP 6
+#### STEP 6
 到Postman以Request URL & Request Method檢查得到的資料是否正確, 並確定資料格式.
 ![](images/postman.png)
 點選postman裡的params可以整理API, 藉由調整參數來知道每個值代表的意義.
 ![](images/postmanParams.png)  
-### STEP 7  
+#### STEP 7  
 原本API裡有callback參數, 但會影響回傳的資料(使資料不符合Json格式), 但刪掉並不影響回傳內容, 故丟Request時可刪除, 方便爬資料!  
-### STEP 8  
+#### STEP 8  
 Coding!!!  
 請參照webCrawlerForTaobao.ipynb  
 ## 參考資料  
