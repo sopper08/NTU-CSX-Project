@@ -1,6 +1,8 @@
 # README
 以下為檔案介紹，標題為檔名(or資料夾)。  
+
 ## week_1  
+*Pandas*  
 熟悉pandas組件。  
 ### pandasFunctionTestCode  
 關於pandas函式庫的學習，裡面試做了幾個工具，更詳細可參閱Python/Module/pandas。  
@@ -8,21 +10,29 @@
 與上者相同。
 
 ## week_2  
+*Web crawler*  
 ### webCrawlerForTaobao 
 根據大數學堂的教學影片，進行掏寶網保溫杯的爬蟲。   
 
 ## week_3  
+*visualization, Web crawler*  
 ### orderQuantity  
 1. 針對訂單來自不同的裝置(web or APP)，做訂單量分析並視覺化。  
 2. 將訂單量以每個月分級，並視覺化。  
 
 ## week_4  
+*Nature language, Jieba, Word Cloud*  
 ### SongOfJamHsiao  
 將蕭敬騰專輯的11首歌分別作字詞分析，並將其視覺化成文字雲。
 
 ## week_5  
+*Nature language, Jieba, tf-idf*  
 ### task5_tfidf
 將task5資料夾裡的文件資料做tf-idf字詞分析。  
+
+## week_7  
+*Machine Learning, SVM, Kaggle, TEP*  
+
 
 ## FinalProjest  
 ### finalProjectGrouping：
