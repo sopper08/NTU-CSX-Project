@@ -33,7 +33,8 @@
 
 ## week_8  
 *Machine Learning, SVM, Kaggle, TEP*  
-
+### week_8 [*(link)*](week_8/README.md)  
+以 transer.py 轉換欄位，再以 PSA.py 訓練並計算準確率。  
 
 ## FinalProjest  
 ### finalProjectGrouping [*(link)*](FinalProject/finalProjectGrouping.ipynb)  
