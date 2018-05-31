@@ -31,7 +31,7 @@
 #### task5_tfidf [*(link)*](week_5/task5_tfidf.ipynb)  
 將task5資料夾裡的文件資料做tf-idf字詞分析。  
 
-## week_8  
+## project2  
 *Machine Learning, SVM, Kaggle, TEP*  
 #### week_8 [*(link)*](week_8/README.md)  
 以 transer.py 轉換欄位，再以 PSA.py 訓練並計算準確率。  
