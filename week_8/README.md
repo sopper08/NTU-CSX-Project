@@ -11,8 +11,9 @@ $ python transer.py ./oriData/titanicQuestion.csv ./transData/testingData.csv
 ### STEP2
 計算準確率。  
 ```
-$ python PSA.py
+$ python PSA.py transData/trainingData transData/testingData
 ```
 
 ## 結論  
 準確率為 96%  
+![](./result.png)  

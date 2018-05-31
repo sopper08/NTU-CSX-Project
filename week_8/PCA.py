@@ -43,12 +43,12 @@ def main():
     testing_labels_df   = pd.DataFrame(testing_labels, columns=['Label'])
     testing_labels_df.index     += 1
     testing_labels_df.index.name = 'survived'
-    testing_labels_df.to_csv('PSAtestingLabel.csv', sep=',')
+    testing_labels_df.to_csv('PCAtestingLabel.csv', sep=',')
     print('testingLabel finish!')
     # 計算準確率
     df = pd.read_csv('oriData/testingLabel.csv')
-    df['PSALabel'] = testing_labels
-    df['diff'] = df['survived']-df['PSALabel']
+    df['PCALabel'] = testing_labels
+    df['diff'] = df['survived']-df['PCALabel']
     accuracy = (309 - df['diff'].abs().sum())/309*100
     
     print("Accuracy: {0}%".format(accuracy))
