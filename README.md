@@ -31,10 +31,27 @@
 #### task5_tfidf [*(link)*](week_5/task5_tfidf.ipynb)  
 將task5資料夾裡的文件資料做tf-idf字詞分析。  
 
-## project2  
+## project2: Titanic  
 *Machine Learning, SVM, Kaggle, TEP*  
 #### week_8 [*(link)*](week_8/README.md)  
 以 transer.py 轉換欄位，再以 PSA.py 訓練並計算準確率。  
+
+## project3: Regression  
+*NTU-CSX, Python, ANOVA, AQI*  
+#### AQIofLunbei_Regression [*(link)*](./project3/dataConstru.ipynb)  
+以氣象局崙背觀測站之 AQI指標 來做 Regression 分析。  
+
+## project4: Apriori  
+NTU-CSX, Python, Apriori*  
+
+## project5: PyTorch  
+NTU-CSX, Python, Machine Learning, PyTorch*  
+
+## project6: NN  
+*CNN, MINIST, DeepLearning*  
+#### CNN_MINIST [*(link)*](./project6/CNN_MINIST.ipynb)  
+使用 minist 資料來做 CNN(卷積類神經網路) 手寫數字辨識。  
+(參考自 TensorFlow + Keras 深度學習人工智慧實務應用 林大貴著)  
 
 ## FinalProjest  
 #### finalProjectGrouping [*(link)*](FinalProject/finalProjectGrouping.ipynb)  
