@@ -46,6 +46,10 @@ NTU-CSX, Python, Apriori*
 
 ## project5: PyTorch  
 NTU-CSX, Python, Machine Learning, PyTorch*  
+#### pytorch_CNN [*(link)*](./project5/pytorch_CNN.ipynb)  
+針對 CIFAR10 資料做 CNN 分析。  
+#### pytorch_Regression [*(link)*](./project5/pytorch_Regression.ipynb)  
+產生一組假資料，透過 PyTorch 回歸。  
 
 ## project6: NN  
 *CNN, MINIST, DeepLearning*  
