@@ -30,6 +30,10 @@
 *Nature language, Jieba, tf-idf*  
 #### task5_tfidf [*(link)*](week_5/task5_tfidf.ipynb)  
 將task5資料夾裡的文件資料做tf-idf字詞分析。  
+## Project1: Wordcloud**  
+*NTU-CSX, Wordcloud, Python*  
+#### task5_tfidf [*(link)*](week_5/task5_tfidf.ipynb)  
+將task5資料夾裡的文件資料做tf-idf字詞分析，並產生文字雲。  
 
 ## project2: Titanic  
 *Machine Learning, SVM, Kaggle, TEP*  
