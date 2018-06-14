@@ -3,6 +3,16 @@
 ## 客戶分群與實驗規劃  
 **slide**: https://drive.google.com/open?id=10Mx4_SRAY1XVbIMDz-y3VirwhLns-JUQNl-RjMnXPCM  
 
+## 數據前處理
+### dataPreprocessing_Orders&Member.ipynb
+### dataMerge_Order&Member.ipynb
+### markByNumofOrder.ipynba
+
+## 分配 Training Data & Testing Data  
+### segMarkData.ipynb
+
+
+## Useless
 ### finalProjectGrouping：  
 * 針對data/NTU_1317_PromotionOrders進行分析。  
 ### finalProjectGrouping1：  
