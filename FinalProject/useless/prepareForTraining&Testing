@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jun 13 10:58:57 2018
+
+@author: sopper
+"""
+
+import pandas as pd
+import numpy as np
+
+# segData
+df = pd.read_csv("./data/segData/df_seg_3.csv")
+# label
+df_la = pd.read_csv("./data/proData/label.csv")
+df_la.replace(0, np.NAN, inplace=True)
+df_la.dropna(inplace=True)
+
+# group
+df.drop(["OrderGroupCode", "ECouponId", "SalesOrderSlaveDateTime"], axis=1, inplace=True)
+groupby_dict = {
+    "RegisterSourceTypeDef": "first",       
+    "OpenCardPresent": "first",                 
+    "IsInBlackList": "first",                   
+    "Female": "first",                          
+    "Male": "first",                                             
+    "TrackSourceTypeDef": "first",              
+    "TrackDeviceTypeDef": "first",              
+    "PromotionDiscount": "sum",                              
+    "ECouponDiscount": "sum",             
+    "SalesOrderSlaveTotalPayment": "sum",           
+    "StatusDef": "first",                      
+    "A": "first",                               
+    "B": "first",                               
+    "C": "first",                               
+    "D": "first",                               
+    "E": "first",                               
+    "F": "first",                               
+    "G": "first",                               
+    "H": "first",                               
+    "I": "first",                               
+    "J": "first",                               
+    "K": "first",                               
+    "L": "first",                               
+    "M": "first",                               
+    "N": "first",                               
+    "O": "first",                               
+    "P": "first",                               
+    "Q": "first",                               
+    "R": "first",                               
+    "S": "first",                               
+    "T": "first",                               
+    "U": "first",                               
+    "V": "first",                               
+    "W": "first",                               
+    "X": "first",                               
+    "Y": "first",                               
+    "Z": "first",                               
+    "AA": "first",                              
+    "AB": "first",                           
+    "num": "last"                            
+}
+data = df.groupby("MemberId").aggregate(groupby_dict)
+df = pd.DataFrame(data).reset_index()
+df["costType"] = abs(-(df["PromotionDiscount"] + df["ECouponDiscount"])/(df["SalesOrderSlaveTotalPayment"] - df["PromotionDiscount"] - df["ECouponDiscount"]))
+df.drop(["PromotionDiscount", "ECouponDiscount", "SalesOrderSlaveTotalPayment"], axis=1, inplace=True)
+
+memID_list = []
+for i in range(0, 800):
+    temp_list = []
+    temp_list = df_la[df_la["OrderGroupCode"]>i]['MemberId'].tolist()
+    memID_list.append(temp_list)
+# print(memID_list[0])
+
+label_list = []
+df1 = df[["MemberId", "num"]].copy()
+
+for i in range(len(df1)):
+    print(i, "/", len(df1)*100)
+    if df1.iloc[i,0] in memID_list[df1.iloc[i,1]]:
+        label_list.append(1)
+    else:
+        label_list.append(0)
+
+df["label"] = label_list
+df.drop("num", axis=1, inplace=True)
