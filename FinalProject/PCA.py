@@ -41,7 +41,6 @@ def div(a, ratio):
     print("Sum of training data(for this seg): {0}".format(len(train)))
     print("Sum of testing data(for this seg): {0}".format(len(test)))
     print("---")
-#     test_seg_list.append(len(test))
     return train, test
 
 # norm function: to normalize (pandas) series data
@@ -71,24 +70,34 @@ def main():
     
     # --- divided df_seg2~20 into training&testing data ---
     # choose df_seg2~20 and divide it 
-    trainingData, testingData = div(2, ratio)
+    trainingData, testingData = div(2,ratio)
+    debug(len(trainingData))
+    debug(len(testingData))
+
     for i in range(3,21):
         df0, df1 = div(i, ratio)
         # concat to pre dataframe, and ignore index
-        trainingData = pd.concat([trainingData,df0],ignore_index=True)  
+        trainingData = pd.concat([trainingData,df0],ignore_index=True)
         testingData = pd.concat([testingData,df1],ignore_index=True)
-        
         debug(len(trainingData))
         debug(len(testingData))
-    
+
+    debug(len(trainingData))
+    debug(len(testingData))
+
     # store "num" column at df_label before norm
     # to check error of every seg(mean "num" column)
     num = testingData["num"]
-    
+
     # normalize the "num" column
+
     trainingData["num"] = norm(trainingData["num"])
     testingData["num"] = norm(testingData["num"])
-    
+
+    # change CostAbi to (1 - CostAbi)
+    trainingData["1CostAbi"] = 1- trainingData["CostAbi"]
+    testingData["1CostAbi"] = 1 - testingData["CostAbi"]
+
     # debug: check trainingData&testingData
     debug("Sum of training data: {0}".format(len(trainingData)))
     debug("Sum of testing data: {0}".format(len(testingData)))
