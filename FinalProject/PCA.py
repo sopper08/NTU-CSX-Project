@@ -20,24 +20,24 @@ def debug(s):
 
 def div(a, ratio):
     print("Running seg{0} ... ".format(a))
-    
+
     df = pd.read_csv("./data/segData/df_seg%s.csv"%a)
     df.drop(["Unnamed: 0", "MemberId"], axis=1, inplace=True)
     debug("Sum of data(for this seg): {0} ".format(len(df)))
-    
+
     msk = np.random.rand(len(df)) < ratio
     train = df[msk]
     test = df[~msk]
     debug(train["SalesOrderSlaveTotalPayment"].max())
     debug(train["SalesOrderSlaveTotalPayment"].min())
-    
+
     train["SalesOrderSlaveTotalPayment"] = norm(train["SalesOrderSlaveTotalPayment"])
     # debug: max should = 1, min should = 0
     debug(train["SalesOrderSlaveTotalPayment"].max())
     debug(train["SalesOrderSlaveTotalPayment"].min())
-    
+
     test["SalesOrderSlaveTotalPayment"] = norm(test["SalesOrderSlaveTotalPayment"])
-    
+
     print("Sum of training data(for this seg): {0}".format(len(train)))
     print("Sum of testing data(for this seg): {0}".format(len(test)))
     print("---")
@@ -64,12 +64,12 @@ def get_testing_labels(training_samples, training_labels, testing_samples):
 
 # main function
 def main():
-    
+
     # --- Read argument ---
     ratio = float(sys.argv[1])
-    
+
     # --- divided df_seg2~20 into training&testing data ---
-    # choose df_seg2~20 and divide it 
+    # choose df_seg2~20 and divide it
     trainingData, testingData = div(2,ratio)
     debug(len(trainingData))
     debug(len(testingData))
@@ -90,7 +90,6 @@ def main():
     num = testingData["num"]
 
     # normalize the "num" column
-
     trainingData["num"] = norm(trainingData["num"])
     testingData["num"] = norm(testingData["num"])
 
@@ -101,6 +100,9 @@ def main():
     # debug: check trainingData&testingData
     debug("Sum of training data: {0}".format(len(trainingData)))
     debug("Sum of testing data: {0}".format(len(testingData)))
+
+    # check column
+    trainingData.to_csv("./data/columncheck.csv")
 
     # --- PCA of training&testing data ---
     # Read training and testing data
@@ -123,9 +125,9 @@ def main():
     df_label.index.name = "label"
     df_label["real_testing_label"] = real_testing_label
     df_label["num"] = num
-    
+
     print('testingLabel finish!')
-    
+
     # Accuracy
     # every seg accuracy
     df_label.dropna(inplace=True)
@@ -134,9 +136,9 @@ def main():
     len_df = len(df_label_int)
     accuracy = (len_df - df_label_int['diff'].abs().sum())/len_df*100
     print("all Accuracy: {0}%".format(accuracy))
-    
+
     add_column_list = ["l1r1", "l1r0", "l0r1", "l0r0"]
-        
+
     state1 = True
     state2 = True
     for column in add_column_list:
@@ -144,7 +146,7 @@ def main():
         df_label_int[column][(df_label_int["label"]==state1)&(df_label_int["real_testing_label"]==state2)] = 1
         state1 = (state1^state2)^True
         state2 = state2^True
-        
+
     data = df_label_int.groupby(by="num")["l1r1", "l1r0", "l0r1", "l0r0"].sum()
     data["oriRatio"] = (data["l1r1"]+data["l0r1"])/(data["l1r1"]+data["l1r0"]+data["l0r1"]+data["l0r0"])
     data["transRatio"] = data["l1r1"]/(data["l1r1"]+data["l1r0"])
