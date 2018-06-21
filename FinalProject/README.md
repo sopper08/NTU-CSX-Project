@@ -1,7 +1,9 @@
 # README  
 
 ## 客戶分群與實驗規劃  
-**slide**: https://drive.google.com/open?id=10Mx4_SRAY1XVbIMDz-y3VirwhLns-JUQNl-RjMnXPCM  
+**客戶分群與實驗規劃**: https://drive.google.com/open?id=10Mx4_SRAY1XVbIMDz-y3VirwhLns-JUQNl-RjMnXPCM  
+**提案說明**: https://drive.google.com/open?id=16V9w0s-zYQdXPxJl0B3-oJn28fReU-VhFQGch3sQJ3s  
+**期末報告**: https://drive.google.com/open?id=11MGk_Lhe6OpgLEpmnn4GEe6IYPWDt6px-N_KlaP2W3Q  
 
 ## 數據前處理  
 ### dataPreprocessing_Orders&Member.ipynb [link](./dataPreprocessing_Orders&Member.ipynb)  
