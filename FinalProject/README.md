@@ -5,14 +5,6 @@
 
 ## 數據前處理  
 ### dataPreprocessing_Orders&Member.ipynb [link](./dataPreprocessing_Orders&Member.ipynb)  
-<<<<<<< HEAD
-### dataMerge_Order&Member.ipynb [link](./dataMerge_Order&Member.ipynb )    
-### markByNumofOrder.ipynb [link](./markByNumofOrder.ipynb)  
-
-## 分配 Training Data & Testing Data  
-### segMarkData.ipynb [link](./segMarkData.ipynb)  
-
-=======
 挑出需要的欄位：  
 * Member.csv  
     * MemberId  
@@ -184,7 +176,6 @@
 $ python PCA.py ratio
 ```
 其中 ratio: Training Data 佔的比例，範圍為 0 ~ 1。  
->>>>>>> 5e5ce9f4b945e237cd6f427fbd8a4499618b51a5
 
 ---  
 
